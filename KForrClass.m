@@ -1,4 +1,10 @@
 classdef KForrClass
+    % KForrClass Generator for k-fold Forrelation datasets
+    %   Each instance of the class represents a k-Forrelation problem with input
+    %   bit strings of length n and k Boolean functions.
+    %   Static methods can be used to directly generate k-Forrelation datasets with
+    %   the desired values of n, k, and mu, using Random or Fourier Sampling
+
     properties
         A % is the Hadamard matrix
         n % length of input bit strings
