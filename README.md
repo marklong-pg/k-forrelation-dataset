@@ -42,12 +42,14 @@ In 2014, [Aaronson and Ambainis](https://www.scottaaronson.com/papers/for.pdf) p
 A review of Fourier analysis on the Boolean Cube can be found [here (de Wolf, 2008)](https://theoryofcomputing.org/articles/gs001/gs001.pdf). This section summarizes the mathematical concepts of discrete Fourier transform on the Boolean cube for the generation of a classification dataset.
 
 ### *4.1. Fourier transform on the Boolean cube and correlation*
-Consider a function 
+Consider a function
+
 $$\begin{align}
 f : \{0,1\}^n \mapsto \R  
 \end{align}$$
 
 The value table $f$ can be represented as a vector in $\R^{2n}$:
+
 $$ 
 \begin{align}
     f \equiv \begin{bmatrix}
@@ -70,6 +72,7 @@ $$
 $$
 
 which defines the $l_2$-norm:
+
 $$
 \begin{align}
 \Vert f \Vert_2 = \sqrt{\langle f,f \rangle} = \sqrt{\sum_{x \in \{0,1\}^n}f(x)^2}  = \sqrt{\mathbb{E}[f(x)^2] }
@@ -77,6 +80,7 @@ $$
 $$
 
 Also, define the function $\chi_s(x)$ in the space as:
+
 $$
 \begin{align} 
 \chi_s(x) = (-1)^{S \cdot x}\sqrt{2^n}
@@ -90,6 +94,7 @@ Note: The definition of $\chi_s$ in Eqn. (5) includes a constant factor which ma
 --> 
 
 $S \cdot x$ is the sum of the bit-wise product of binary string $S$ and $x$: 
+
 $$
 \begin{align} 
 S \cdot x = \sum_{i=1}^ns_ix_i = \sum_{i \in S}x_i
@@ -99,6 +104,7 @@ $$
 It can be shown that $\langle \chi_s,\chi_t\rangle = \delta_{st}$. Thus, the set of all $\chi_s$ forms an orthogonal basis of the function space.
 
 Then, the Fourier Transform of any function $f(x)$ in the space can be defined as:
+
 $$
 \begin{align} 
 \hat{f}(S) = \langle f, \chi_s \rangle & = \frac{1}{2^n} \sum_{x \in \{0,1\}^n}f(x)\chi_s(x) \\
@@ -120,14 +126,13 @@ $$
 $\Phi_{f,g}$ from Eqn. (12) is a measure of how correlated is $f(x)$ to the Fourier transform of $g(x)$.
 
 The form of $\Phi$ can be heuristically generalize to $k$ functions, called k-Fold Forrelation or, k-Forrelation for short:
-$$
 
+$$
 \begin{align}
 \boxed{
 \Phi_{f_1,\dots,f_k} = \frac{1}{2^{n(k+1)/2}} \sum_{x_1,\dots,x_k \in \{0,1\}^n}f_1(x_1)(-1)^{x_1 \cdot x_2}f_2(x_2) \dots (-1)^{x_{k-1} \cdot x_k}f_k(x_k)
 }
 \end{align}
-
 $$
 
 ### *4.2. k-Fold Forrelation Problem*
