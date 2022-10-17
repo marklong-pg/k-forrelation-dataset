@@ -45,10 +45,10 @@ A review of Fourier analysis on the Boolean Cube can be found [here (de Wolf, 20
 Consider a function
 
 $$\begin{align}
-f : \{0,1\}^n \mapsto \R  
+f : \{0,1\}^n \mapsto \mathbb{R}  
 \end{align}$$
 
-The value table $f$ can be represented as a vector in $\R^{2n}$:
+The value table $f$ can be represented as a vector in $\mathbb{R}^{2n}$:
 
 $$ 
 \begin{align}
@@ -63,7 +63,7 @@ $$
 
 (we will later focus on functions that map only to Boolean values $-1$ or $+1$. Here, assuming mapping to real numbers without loss of generality)
 
-Define a $2^n \ -$ dimensional function space over $\R$ with inner product:
+Define a $2^n \ -$ dimensional function space over $\mathbb{R}$ with inner product:
 
 $$
 \begin{align}
@@ -87,7 +87,7 @@ $$
 \end{align}
 $$
 
-where, $S \sube [n]=\{1,2,\dots,n\}$ with its characteristic vector $S \in \{0,1\}^n$. I.e., $S$ is the short-handed notation for a binary string of length $n$ with value 1 at the integer indices indicated by S. For example, $S = \{1,2,4\} \sube [5] \rightarrow S \equiv 1\ 1\ 0\ 1\ 0$.
+where, $S \subseteq [n]=\{1,2,\dots,n\}$ with its characteristic vector $S \in \{0,1\}^n$. I.e., $S$ is the short-handed notation for a binary string of length $n$ with value 1 at the integer indices indicated by S. For example, $S = \{1,2,4\} \subseteq [5] \rightarrow S \equiv 1\ 1\ 0\ 1\ 0$.
 
 <!---
 Note: The definition of $\chi_s$ in Eqn. (5) includes a constant factor which makes the norm of $\chi_s$ not unity. This adjustment is mainly to reconcile with the form K-Forrelation introduced by Aaronson (2014)
@@ -112,7 +112,7 @@ $$
 \end{align}
 $$
 
-Given two functions $f(x), \ g(x): \{0,1\}^n \mapsto \R $, computing the inner product of $f(x)$ and the Fourier transform of $g(x)$:
+Given two functions $f(x), \ g(x): \{0,1\}^n \mapsto \mathbb{R} $, computing the inner product of $f(x)$ and the Fourier transform of $g(x)$:
 
 $$
 \begin{align}
@@ -137,7 +137,7 @@ $$
 
 ### *4.2. k-Fold Forrelation Problem*
 
-If we restrict the range of $f_k: \{0,1\}^n \mapsto \pm 1$ (instead of $\R$), $\Phi_{f_1,\dots,f_k}$ is precisely the amplitude with which the circuit shown in Fig. (1) returns $|0 \rangle ^{\otimes n}$ as its output (Aaronson, 2014)
+If we restrict the range of $f_k: \{0,1\}^n \mapsto \pm 1$ (instead of $\mathbb{R}$), $\Phi_{f_1,\dots,f_k}$ is precisely the amplitude with which the circuit shown in Fig. (1) returns $|0 \rangle ^{\otimes n}$ as its output (Aaronson, 2014)
 
 ![image](.media/kforr_circuit.png)
 <p style="text-align: center;"> Figure 1. A quantum circuit that can be taken to define the k-fold Forrelation problem.  (Aaronson, 2014) </p>
