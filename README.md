@@ -43,11 +43,9 @@ A review of Fourier analysis on the Boolean Cube can be found [here (de Wolf, 20
 
 ### *4.1. Fourier transform on the Boolean cube and correlation*
 Consider a function 
-$$
-\begin{align}
+$$\begin{align}
 f : \{0,1\}^n \mapsto \R  
-\end{align} 
-$$ 
+\end{align}$$
 
 The value table $f$ can be represented as a vector in $\R^{2n}$:
 $$ 
