@@ -1,12 +1,11 @@
 ---
-output: bookdown::html_document2
+Last Update: Oct 23, 2022
 ---
 
 # K-Forrelation Dataset for Benchmarking Hybrid Classical-Quantum Classifiers
 
 ![image](.media/readme_cover.png)
 
-*[Updated: Oct 13, 2022]*
 
 *Note: All Rights Reserved - Unpublished research results*
 
