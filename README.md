@@ -181,7 +181,7 @@ Conditions on the functions to be sampled:
 
 * Each function is Boolean in the general function space $f(x): \{0,1\}^n \mapsto \{+1,-1\}$
 * Each function is of the form $f(x) = (-1)^{C_i(x)}$ where $C_i(x)$ is a product of at most 3 input bits, or chosen to be constant $f(x)=1$
-* The number of function in each ensemble is at least three ($k \geq 3$)
+* The number of function in each ensemble is at least three ($k \ge 3$)
 
 > The space of all Boolean functions is called the *general space*. Boolean functions that satisfy the above conditions are said to be in the *policy space*
 
@@ -192,18 +192,20 @@ Structure of the datasets:
   * Number of Boolean functions $k$
   * Threshold of positive class $\mu$ (the value of $\Phi$ above which an example is attributed the positive class)
 * Each example is one-hot encoded with length $n \times k$
-* Condition on the number of functions $k \leq \text{poly}(n)$
+* Condition on the number of functions $k \le \text{poly}(n)$
 
 With $k$ functions randomly sampled from the *general space*, the value of $\Phi$ could be thought of as a random variable in the range $[-1,1]$. 
 
-It can be proved that $\mathbb{E}_{f_1,\dots,f_k} [\Phi] = 0$ and $\text{Var}_{f_1,\dots,f_k} [\Phi] = \frac{1}{2^n}$, which implies that the distributions of $\Phi$ in the *general space* peaks around $0$ with standard deviation independent of $k$ and decreasing exponentially in $n$
+It can be proved that $\mathbb{E}_{f_1,\dots,f_k} (\Phi) = 0$ and $\text{Var}_{f_1,\dots,f_k} (\Phi) = \frac{1}{2^n}$, which implies that the distributions of $\Phi$ in the *general space* peaks around $0$ with standard deviation independent of $k$ and decreasing exponentially in $n$
 
 ![image](.media/general_distribution.png)
+
 Figure 2. Distributions of $\Phi$ for random sampling in *general space* with increasing values of $n$ and $k$
 
 A similar trend can be seen for $\Phi$ in the *policy space*
 
 ![image](.media/policy_distribution.png)
+
 Figure 3. Distributions of $\Phi$ for random sampling in *policy space* with increasing values of $n$ and $k$
 
 ### **Random Generation**
@@ -222,14 +224,14 @@ Cons:
 
 ### **2-Forrelation Generation**
 [Aaronson (2014)](https://arxiv.org/abs/1411.5729v1) introduces an algorithm to generate the positive class for the case of *2-Forrelation*. To generate two Boolean functions that are highly likely to be forrelated:
-* Generate a random vector $\bold{v} \in \mathbb{R}^{2^n}$ with each entry sampled from the normal distribution $\mathcal{N}(0,1)$
-* Set $f_1 = \text{sign}(\bold{v})$ and $f_1 = \text{sign}(\hat{\bold{v}})$, where $\hat{\bold{v}}$ is the discrete Fourier transform of $\bold{v}$
+* Generate a random vector $\boldsymbol{v} \in \mathbb{R}^{2^n}$ with each entry sampled from the normal distribution $\mathcal{N}(0,1)$
+* Set $f_1 = \text{sign}(\boldsymbol{v})$ and $f_1 = \text{sign}(\hat{\boldsymbol{v}})$, where $\hat{\boldsymbol{v}}$ is the discrete Fourier transform of $\boldsymbol{v}$
 
 ### **K-Forrelation Generation**
 
-Since *2-Forrelation* is not a sub-problem of k-Forrelation, it is not trivial to find a generation algorithm that would work to generate k-Forrelation ensambles with arbitrary number of functions ($k \geq 2$). 
+Since *2-Forrelation* is not a sub-problem of k-Forrelation, it is not trivial to find a generation algorithm that would work to generate k-Forrelation ensambles with arbitrary number of functions ($k \ge 2$). 
 
-Here I proposes a generalization of the sampling strategy for any arbitrary number of functions. This is done by leveraging the recursive linearized form of $\Phi$ and the re-sampling of the randomized vector $\bold{v}$ to perform approximate Fourier Transform. First, we can write $\Phi$ as:
+Here I proposes a generalization of the sampling strategy for any arbitrary number of functions. This is done by leveraging the recursive linearized form of $\Phi$ and the re-sampling of the randomized vector $\boldsymbol{v}$ to perform approximate Fourier Transform. First, we can write $\Phi$ as:
 
 $$
 \Phi(k>2,n) = \frac{1}{2^{(k+1)n/2}} \ \text{sum}(\overrightarrow{\Omega_k}) \, \\ \text{where,} \
@@ -242,7 +244,7 @@ $$
 
 $H$ is the matrix representation of the unitary where Hadamard gates are applied to all $n$ qubits (a constant matrix given $n$). $H$ can also be viewed as the matrix that stores information about the value of dot products of the binary input bit strings of length $n$
 
-The idea is to view $\overrightarrow{\Omega}_{k-1}$ as approximately a function $f_{k-1}$. Then, following the 2-Forrelation sampling algorithm, $f_{k-1}$ can be taken to possess the sign of some randomly generated random vector $\bold{v}$. We thus generate a random vector from $\mathcal{N}(0,1)$ and assign to it the sign of $f_{k-1}$. Finally, we have $f_k = \text{sign}(\hat{\bold{v}})$. The pseudo-code is shown below:
+The idea is to view $\overrightarrow{\Omega}_{k-1}$ as approximately a function $f_{k-1}$. Then, following the 2-Forrelation sampling algorithm, $f_{k-1}$ can be taken to possess the sign of some randomly generated random vector $\boldsymbol{v}$. We thus generate a random vector from $\mathcal{N}(0,1)$ and assign to it the sign of $f_{k-1}$. Finally, we have $f_k = \text{sign}(\hat{\boldsymbol{v}})$. The pseudo-code is shown below:
 
 **FOURIER GENERATOR (k)**:
 
@@ -250,25 +252,25 @@ The idea is to view $\overrightarrow{\Omega}_{k-1}$ as approximately a function 
 
 &emsp;&emsp;choose $f_1$ randomly from the space
 
-&emsp;&emsp;generate random vector $\bold{v}$ from the standard normal distribution
+&emsp;&emsp;generate random vector $\boldsymbol{v}$ from the standard normal distribution
 
-&emsp;&emsp;assign sign of $f_1$ to the absolute-valued vector $|\bold{v}|$ to obtain $\bold{v}'$
+&emsp;&emsp;assign sign of $f_1$ to the absolute-valued vector $|\boldsymbol{v}|$ to obtain $\boldsymbol{v}'$
 
-&emsp;&emsp;return [$f_1$], $\bold{v}'$
+&emsp;&emsp;return [$f_1$], $\boldsymbol{v}'$
 
 &emsp; else:
 
-&emsp;&emsp;previous functions, $\bold{v}'_{k-1} =$  **FOURIER GENERATOR (k-1)**
+&emsp;&emsp;previous functions, $\boldsymbol{v}'_{k-1} =$  **FOURIER GENERATOR (k-1)**
 
-&emsp;&emsp;$f_k = \text{sign}(\bold{v}'_{k-1})$
+&emsp;&emsp;$f_k = \text{sign}(\boldsymbol{v}'_{k-1})$
 
 &emsp;&emsp;calculate $\overrightarrow{\Omega_k}$
 
-&emsp;&emsp;generate random vector $\bold{v}_k$ from the standard normal distribution 
+&emsp;&emsp;generate random vector $\boldsymbol{v}_k$ from the standard normal distribution 
 
-&emsp;&emsp;assign sign of  $\overrightarrow{\Omega_k}$ to the absolute-valued vector $|\bold{v}_k|$ to obtain $\bold{v}'_k$
+&emsp;&emsp;assign sign of  $\overrightarrow{\Omega_k}$ to the absolute-valued vector $|\boldsymbol{v}_k|$ to obtain $\boldsymbol{v}'_k$
 
-&emsp;&emsp;return [previous functions, $f_k$], $\bold{v}'_k$
+&emsp;&emsp;return [previous functions, $f_k$], $\boldsymbol{v}'_k$
 
 &emsp; end if
 
@@ -288,9 +290,9 @@ A characterization of the generated datasets using classical SVM with Bayesian-o
 
 Here is summary of the guidelines for generating the k-Forrelation datasets:
 
-* **Choose $n$**: Go as high as desirable, or computationally capable, depending on the purpose. If $n^*$ is the number of qubits being used in a quantum classifier, then it is suggested that $n \leq n^*$
+* **Choose $n$**: Go as high as desirable, or computationally capable, depending on the purpose. If $n^*$ is the number of qubits being used in a quantum classifier, then it is suggested that $n \le n^*$
 * **Choose $k$**: Go as high as possible according to the chosen $n$, with the restriction $k = \text{poly}(n)$. From our experiments, $k \approx n^2$ is a good heuristic
-* **Choose positive threshold**: Near 0, but not overlapping with the negative class (defined to be instances with $|\Phi|  \leq 0.01$) – e.g., around $0.02$
+* **Choose positive threshold**: Near 0, but not overlapping with the negative class (defined to be instances with $|\Phi|  \le 0.01$) – e.g., around $0.02$
 * **Generative algorithm**: Random Sampling (for $n < 10$). Larger $n$ would require Fourier Sampling, but the dataset is expected to be relatively easier than randomly sampled
 
 **GENERATING WITH MATLAB**
