@@ -18,7 +18,7 @@ output: bookdown::html_document2
 5. [Algorithms to generate the dataset](#algorithm)
 6. [Guidelines for Generation](#guideline)
 
-> This article is a brief summary of the project, [click here for the full written report]().
+> This article is a brief summary of the project, [click here for the full written report](<K-Forrelation Project Report.pdf>).
 
 ## **1. Motivation** <a id="motivation"></a>
 
@@ -292,7 +292,7 @@ Figure 5. $\Phi$ distributions for random sampling and Fourier sampling in *poli
 
 ## **6. Guideline for Generation** <a id="guideline"></a>
 
-A characterization of the generated datasets using classical SVM with Bayesian-optimized kernel can be found in the [Full Written Report]()
+A characterization of the generated datasets using classical SVM with Bayesian-optimized kernel can be found in the [Full Written Report](<K-Forrelation Project Report.pdf>)
 
 Here is summary of the guidelines for generating the k-Forrelation datasets:
 
