@@ -197,7 +197,7 @@ Structure of the datasets:
 With $k$ functions randomly sampled from the *general space*, the value of $\Phi$ could be thought of as a random variable in the range $[-1,1]$. 
 
 It can be proved that 
-$$\mathbb{E}_{f_1,\dots,f_k} (\Phi) = 0$$
+$$\mathbb{E}(\Phi) = 0$$
 and 
 $$\text{Var}_{f_1,\dots,f_k} (\Phi) = \frac{1}{2^n}$$
 Which implies that the distributions of $\Phi$ in the *general space* peaks around $0$ with standard deviation independent of $k$ and decreasing exponentially in $n$
