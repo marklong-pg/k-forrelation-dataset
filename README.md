@@ -26,10 +26,10 @@ Currently, most research on quantum classifiers (e.g., quantum support vector ma
  **Note:** Benchmarking of (classical) machine learning algorithms concern criteria such as model complexity, scalability, sample complexity, interpretability, ability to learn from data stream, performance, among others. It remains an open question what should be the criteria to benchmark quantum algorithms and confirm any hypothesis of performance improvement. This is because the matters of concern for quantum computing are different and include: number of qubits, noise, depth of circuit, trainability, among others. This research suggests some potential use for the k-Forrelation dataset, but leave further discussion on the proper benchmarking of quantum algorithms to future works
 
  ## **2. Contributions** <a id="contributions"></a>
-* An analysis of the properties of the k-Forrelation datasets in classification task
-* An algorithm to generate k-Forrelation datasets with high positive class threshold
+* An algorithm to generate k-Forrelation datasets with high positive class threshold based on approximated Fourier Transform 
+* An analysis of the properties of k-Forrelation datasets in classification task
 * Guidelines for the generation of k-Forrelation datasets for benchmarking
-* Suggestions and demonstration for potential uses of k-Forrelation datasets
+* Suggestions and demonstration for potential uses of k-Forrelation datasets *(in progress)*
 
 ## **3. Tools Used** <a id="tools"></a>
 * MATLAB (for development of sampling algorithm and dataset generation) 
