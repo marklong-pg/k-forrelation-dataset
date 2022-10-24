@@ -243,7 +243,7 @@ $$
 $$
 \begin{cases}
    \overrightarrow{\Omega_2} & = (H\vec{f_1}) \ \odot \ \vec{f_2} \\
-   \overrightarrow{\Omega_k} & = (\overrightarrow{\Omega}_ {k-1}) \ \odot \ \vec{f_k}
+   \overrightarrow{\Omega_k} & = (H\overrightarrow{\Omega}_ {k-1}) \ \odot \ \vec{f_k}
 \end{cases}
 $$
 
