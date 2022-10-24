@@ -181,7 +181,7 @@ Conditions on the functions to be sampled:
 
 * Each function is Boolean in the general function space $f(x): \{0,1\}^n \mapsto \{+1,-1\}$
 * Each function is of the form $f(x) = (-1)^{C_i(x)}$ where $C_i(x)$ is a product of at most 3 input bits, or chosen to be constant $f(x)=1$
-* The number of function in each ensemble is at least three ($k \ge 3$)
+* The number of function in each ensemble is at least three ( $k \ge 3$ )
 
 > The space of all Boolean functions is called the *general space*. Boolean functions that satisfy the above conditions are said to be in the *policy space*
 
@@ -229,7 +229,7 @@ Cons:
 
 ### **K-Forrelation Generation**
 
-Since *2-Forrelation* is not a sub-problem of k-Forrelation, it is not trivial to find a generation algorithm that would work to generate k-Forrelation ensambles with arbitrary number of functions ($k \ge 2$). 
+Since *2-Forrelation* is not a sub-problem of k-Forrelation, it is not trivial to find a generation algorithm that would work to generate k-Forrelation ensambles with arbitrary number of functions ( $k \ge 2$ ). 
 
 Here I proposes a generalization of the sampling strategy for any arbitrary number of functions. This is done by leveraging the recursive linearized form of $\Phi$ and the re-sampling of the randomized vector $\boldsymbol{v}$ to perform approximate Fourier Transform. First, we can write $\Phi$ as:
 
@@ -256,13 +256,13 @@ The idea is to view $\overrightarrow{\Omega}_{k-1}$ as approximately a function 
 
 &emsp;&emsp;assign sign of $f_1$ to the absolute-valued vector $|\boldsymbol{v}|$ to obtain $\boldsymbol{v}'$
 
-&emsp;&emsp;return [$f_1$], $\boldsymbol{v}'$
+&emsp;&emsp;return [ $f_1$ ], $\boldsymbol{v}'$
 
 &emsp; else:
 
 &emsp;&emsp;previous functions, $\boldsymbol{v}'_{k-1} =$  **FOURIER GENERATOR (k-1)**
 
-&emsp;&emsp;$f_k = \text{sign}(\boldsymbol{v}'_{k-1})$
+&emsp;&emsp; $f_k = \text{sign} (\boldsymbol{v}'_{k-1})$
 
 &emsp;&emsp;calculate $\overrightarrow{\Omega_k}$
 
@@ -290,7 +290,7 @@ A characterization of the generated datasets using classical SVM with Bayesian-o
 
 Here is summary of the guidelines for generating the k-Forrelation datasets:
 
-* **Choose $n$**: Go as high as desirable, or computationally capable, depending on the purpose. If $n^*$ is the number of qubits being used in a quantum classifier, then it is suggested that $n \le n^*$
+* **Choose $n$**: Go as high as desirable, or computationally capable, depending on the purpose. If $N$ is the number of qubits being used in a quantum classifier, then it is suggested that $n \le N$
 * **Choose $k$**: Go as high as possible according to the chosen $n$, with the restriction $k = \text{poly}(n)$. From our experiments, $k \approx n^2$ is a good heuristic
 * **Choose positive threshold**: Near 0, but not overlapping with the negative class (defined to be instances with $|\Phi|  \le 0.01$) – e.g., around $0.02$
 * **Generative algorithm**: Random Sampling (for $n < 10$). Larger $n$ would require Fourier Sampling, but the dataset is expected to be relatively easier than randomly sampled
