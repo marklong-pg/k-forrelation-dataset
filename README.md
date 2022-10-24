@@ -295,7 +295,7 @@ Here is summary of the guidelines for generating the k-Forrelation datasets:
 
 **GENERATING WITH MATLAB**
 
-The k-Forrelation datasets can be generated using the MATLAB class *KForrClass.m*
+The k-Forrelation datasets can be generated using the MATLAB class `KForrClass.m`
 
 To generate a dataset using **Random Sampling** use `getDatasetRandomSamp` function. E.g., to randomly sample from the *general space* a k-Forrelation set with:
 * $n=5$
