@@ -228,7 +228,7 @@ Cons:
 ### **2-Forrelation Generation**
 [Aaronson (2014)](https://arxiv.org/abs/1411.5729v1) introduces an algorithm to generate the positive class for the case of *2-Forrelation*. To generate two Boolean functions that are highly likely to be forrelated:
 * Generate a random vector $\boldsymbol{v} \in \mathbb{R}^{2^n}$ with each entry sampled from the normal distribution $\mathcal{N}(0,1)$
-* Set $f_1 = \text{sign}(\boldsymbol{v})$ and $f_1 = \text{sign}(\hat{\boldsymbol{v}})$, where $\hat{\boldsymbol{v}}$ is the discrete Fourier transform of $\boldsymbol{v}$
+* Set $f_1 = \text{sign}(\boldsymbol{v})$ and $f_2 = \text{sign}(\hat{\boldsymbol{v}})$, where $\hat{\boldsymbol{v}}$ is the discrete Fourier transform of $\boldsymbol{v}$
 
 ### **K-Forrelation Generation**
 
@@ -243,7 +243,7 @@ $$
 $$
 \begin{cases}
    \overrightarrow{\Omega_2} & = (H\vec{f}_1) \ \odot \ \vec{f_2} \\
-   \overrightarrow{\Omega_k} & = (H\vec{f}_{k-1}) \ \odot \ \vec{f_k}
+   \overrightarrow{\Omega_k} & = (H\vec{f}_ {k-1}) \ \odot \ \vec{f_k}
 \end{cases}
 $$
 
