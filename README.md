@@ -238,7 +238,7 @@ Since *2-Forrelation* is not a sub-problem of k-Forrelation, it is not trivial t
 Here I proposes a generalization of the sampling strategy for any arbitrary number of functions. This is done by leveraging the recursive linearized form of $\Phi$ and the re-sampling of the randomized vector $\boldsymbol{v}$ to perform approximate Fourier Transform. First, we can write $\Phi$ as:
 
 $$
-\Phi(k>2,n) = \frac{1}{2^{(k+1)n/2}} \ \text{sum}(\overrightarrow{\Omega_k}) \, \\ 
+\Phi(k>2,n) = \frac{1}{2^{(k+1)n/2}} \ \text{sum}(\overrightarrow{\Omega_k}) 
 $$
 
 $$
@@ -250,7 +250,7 @@ $$
 
 $H$ is the matrix representation of the unitary where Hadamard gates are applied to all $n$ qubits (a constant matrix given $n$). $H$ can also be viewed as the matrix that stores information about the value of dot products of the binary input bit strings of length $n$
 
-The idea is to view $\overrightarrow{\Omega}_{k-1}$ as approximately a function $f_{k-1}$. Then, following the 2-Forrelation sampling algorithm, $f_{k-1}$ can be taken to possess the sign of some randomly generated random vector $\boldsymbol{v}$. We thus generate a random vector from $\mathcal{N}(0,1)$ and assign to it the sign of $f_{k-1}$. Finally, we have $f_k = \text{sign}(\hat{\boldsymbol{v}})$. The pseudo-code is shown below:
+The idea is to view $\overrightarrow{\Omega}\\_{k-1}$ as approximately a function $f\\_{k-1}$. Then, following the 2-Forrelation sampling algorithm, $f_{k-1}$ can be taken to possess the sign of some randomly generated random vector $\boldsymbol{v}$. We thus generate a random vector from $\mathcal{N}(0,1)$ and assign to it the sign of $f_{k-1}$. Finally, we have $f_k = \text{sign}(\hat{\boldsymbol{v}})$. The pseudo-code is shown below:
 
 **FOURIER GENERATOR (k)**:
 
