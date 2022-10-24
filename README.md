@@ -174,7 +174,7 @@ This decision problem was used to prove the maximal separation in query complexi
 
 The question remains to find a quantum classifier architecture capable of learning the k-Forrelation problem without the characteristic feature map (circuit in Fig. (1)) provided. This effort requires the generation of k-Forrelation datasets at various scales (length of input bitstring $n$, number of function $k$, and the positive class threshold). Generating a balance dataset is difficult since the positive class is much rarer than the negative class, especially at larger $k$ and $n$. The current research investigates the properties of and challenges in generating the k-Forrelation datasets, as well as proposes an algorithm to sample balanced datasets. 
 
-## **5. Algorithms to generate the datasets**
+## **5. Algorithms to generate the datasets** <a id="algorithm"></a>
 
 Conditions on the functions to be sampled:
 
