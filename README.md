@@ -199,7 +199,7 @@ With $k$ functions randomly sampled from the *general space*, the value of $\Phi
 It can be proved that 
 $$\mathbb{E}(\Phi) = 0$$
 and 
-$$\text{Var}_{f_1,\dots,f_k} (\Phi) = \frac{1}{2^n}$$
+$$\text{Var}(\Phi) = \frac{1}{2^n}$$
 Which implies that the distributions of $\Phi$ in the *general space* peaks around $0$ with standard deviation independent of $k$ and decreasing exponentially in $n$
 
 ![image](.media/general_distribution.png)
@@ -238,8 +238,10 @@ Since *2-Forrelation* is not a sub-problem of k-Forrelation, it is not trivial t
 Here I proposes a generalization of the sampling strategy for any arbitrary number of functions. This is done by leveraging the recursive linearized form of $\Phi$ and the re-sampling of the randomized vector $\boldsymbol{v}$ to perform approximate Fourier Transform. First, we can write $\Phi$ as:
 
 $$
-\Phi(k>2,n) = \frac{1}{2^{(k+1)n/2}} \ \text{sum}(\overrightarrow{\Omega_k}) \, \\ \text{where,} \
+\Phi(k>2,n) = \frac{1}{2^{(k+1)n/2}} \ \text{sum}(\overrightarrow{\Omega_k}) \, \\ 
+$$
 
+$$
 \begin{cases}
    \overrightarrow{\Omega_2} & = (H\vec{f}_1) \ \odot \ \vec{f_2} \\
    \overrightarrow{\Omega_k} & = (H\vec{f}_{k-1}) \ \odot \ \vec{f_k}
